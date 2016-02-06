@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="ComposableAdaptiveTriggerDemo.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ComposableAdaptiveTriggerDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Template10.Controls"
+    mc:Ignorable="d" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <Page.Resources>
+    <Style x:Key="MenuText" TargetType="TextBlock">
+      <Setter Property="Margin" Value="12, 6, 0, 0" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="SymbolIcon" TargetType="SymbolIcon">
+      <Setter Property="Height" Value="48" />
+      <Setter Property="Width" Value="48" />
+    </Style>
+  </Page.Resources>
+  <Grid>
+  <controls:HamburgerMenu x:Name="Menu" AccentColor="{ThemeResource SystemAccentColor}" 
+                            VisualStateNarrowMinWidth="0"
+                            VisualStateNormalMinWidth="700">
+
+    <controls:HamburgerMenu.PrimaryButtons>
+        <controls:HamburgerButtonInfo  PageType="local:Default" >
+        <StackPanel Orientation="Horizontal">
+          <SymbolIcon Symbol="Home" Style="{StaticResource SymbolIcon}"/>
+          <TextBlock Text="Default" Style="{StaticResource MenuText}"/>
+        </StackPanel>
+      </controls:HamburgerButtonInfo>
+
+      <controls:HamburgerButtonInfo PageType="local:Custom">
+        <StackPanel Orientation="Horizontal">
+            <SymbolIcon Symbol="Help"  Style="{StaticResource SymbolIcon}"/>
+            <TextBlock Text="Custom" Style="{StaticResource MenuText}"/>
+        </StackPanel>
+      </controls:HamburgerButtonInfo>
+        </controls:HamburgerMenu.PrimaryButtons>
+
+    </controls:HamburgerMenu>
+  </Grid>
+</Page>
