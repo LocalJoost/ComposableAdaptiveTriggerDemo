@@ -38,8 +38,8 @@ namespace WpWinNl.Triggers
     private void OnCoreWindowOnSizeChanged(Size size)
     {
       IsActive = size.Height >= MinWindowHeight && size.Width >= MinWindowWidth &&
-                 size.Height < MaxWindowHeight && size.Width < MaxWindowWidth &&
-                 MinWindowHeight < MaxWindowHeight && MinWindowWidth < MaxWindowWidth;
+                 size.Height <= MaxWindowHeight && size.Width <= MaxWindowWidth &&
+                 MinWindowHeight <= MaxWindowHeight && MinWindowWidth <= MaxWindowWidth;
     }
 
 
